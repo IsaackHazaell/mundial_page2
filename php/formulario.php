@@ -1,10 +1,18 @@
 <?php
 
-  echo "<br>";
-  echo $_POST ["nameFriend1"]."<br><br>";
-  echo $_POST ["nameFriend2"]."<br><br>";
-  echo $_POST ["name"]."<br><br>";
-  echo $_POST ["email"]."<br><br>";
-  echo $_POST ["message"]."<br><br>";
+  //$destino = "";
+  $nameFriend1 = $_POST["nameFriend1"];
+  $nameFriend2 = $_POST["nameFriend2"];
+  $name = $_POST["name"];
+  $email = $_POST["email"];
+  $message = $_POST["message"];
+
+  $content = "Nombre del primer referido: " . $nameFriend1 .
+  "\n Nombre del segundo referido: " . $nameFriend2 .
+  "\n Tu nombre: " . $name .
+  "\n Tus comentarios: " . $message;
+
+  mail($email, "World Cup Quiniela", $content);
+  header("Location:quiniela.html")
 
 ?>

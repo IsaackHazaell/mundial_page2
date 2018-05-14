@@ -31,31 +31,15 @@
 </head>
 <body>
 
-	<div class="bg-container-contact100" style="background-image: url(../images/bg-05.jpg);">
-		<!-- <div class="contact100-header flex-sb-m"> -->
-			<!-- <a href="#" class="contact100-header-logo">
-				<img src="images/icons/frida2.png" alt="LOGO" width="50" height="80">
-			</a> -->
-
-			<!-- <div>
-				<button class="btn-show-contact100">
-					Contact Us
-				</button>
-			</div> -->
-		<!-- </div> -->
-	</div>
+	<div class="bg-container-contact100" style="background-image: url(../images/bg-05.jpg);"></div>
 
 	<div class="container-contact100">
 		<div class="wrap-contact100">
-			<!-- <button class="btn-hide-contact100">
-				<i class="zmdi zmdi-close"></i>
-			</button> -->
-
 			<div class="contact100-form-title" style="background-image: url(../images/bg-04.jpg);">
 				<span>Llena el formulario</span>
 			</div>
 
-			<form class="contact100-form validate-form" method="post">
+			<form class="contact100-form validate-form" action= "../php/formulario.php" method="post">
 				<div class="wrap-input100 validate-input">
 					<input id="nameFriend1" class="input100" type="text" name="friend1" placeholder="Nombre completo del referido 1">
 					<span class="focus-input100"></span>
@@ -106,7 +90,7 @@
 				</div> -->
 
 				<!-- Otra forma de enviar datos -->
-				 <input type="button" value="Enviar" onclick="enviar_datos">
+				 <input type="submit" value="Enviar" onclick="enviar_datos">
 
 				<div id="show-data"></div>
 

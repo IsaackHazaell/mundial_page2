@@ -55,7 +55,7 @@
 				<span>Llena el formulario</span>
 			</div>
 
-			<form class="contact100-form validate-form">
+			<form class="contact100-form validate-form" method="post">
 				<div class="wrap-input100 validate-input">
 					<input id="nameFriend1" class="input100" type="text" name="friend1" placeholder="Nombre completo del referido 1">
 					<span class="focus-input100"></span>
@@ -99,14 +99,17 @@
 				</div>
 
 				<!-- Validación de formulario incorrecta -->
-				<div class="container-contact100-form-btn">
+				<!-- <div class="container-contact100-form-btn">
 						<a class="contact100-form-btn" href="quiniela.html">
 							Enviar
 						</a>
-				</div>
+				</div> -->
 
 				<!-- Otra forma de enviar datos -->
-				<!-- <input type="button"  value="enviar" onclick="enviar-datos"> -->
+				 <input type="button" value="Enviar" onclick="enviar_datos">
+
+				<div id="show-data"></div>
+
 			</form>
 		</div>
 	</div>
@@ -129,6 +132,9 @@
 	<script src="../vendor/countdowntime/countdowntime.js"></script>
 <!--===============================================================================================-->
 	<script src="../js/main.js"></script>
+	<!-- Libreria del nuevo formulario -->
+<!--===============================================================================================-->
+	<script src="../js/formulario.js"></script>
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
 	<script>

@@ -36,10 +36,11 @@
 	<div class="container-contact100">
 		<div class="wrap-contact100">
 			<div class="contact100-form-title" style="background-image: url(../images/bg-04.jpg);">
-				<span>Llena el formulario</span>
+				<span class="text-center">Llena el formulario</span>
 			</div>
 
-			<form class="contact100-form validate-form" action= "../php/formulario.php" method="post">
+			<form class="contact100-form validate-form">
+				<!-- action= "../php/formulario.php" method="post" -->
 				<div class="wrap-input100 validate-input">
 					<input id="nameFriend1" class="input100" type="text" name="friend1" placeholder="Nombre completo del referido 1">
 					<span class="focus-input100"></span>
@@ -83,14 +84,16 @@
 				</div>
 
 				<!-- Validación de formulario incorrecta -->
-				<!-- <div class="container-contact100-form-btn">
-						<a class="contact100-form-btn" href="quiniela.html">
+				<!-- a no valida pero si va a ruta -->
+				<!-- Button si valida pero no va a ruta -->
+				<div class="container-contact100-form-btn">
+						<a class="contact100-form-btn" href='quiniela.html'>
 							Enviar
 						</a>
-				</div> -->
+				</div>
 
 				<!-- Otra forma de enviar datos -->
-				 <input type="submit" value="Enviar" onclick="enviar_datos">
+				<!-- <input type="submit" value="Enviar" onclick="enviar_dato" href="quiniela.html"> -->
 
 				<div id="show-data"></div>
 

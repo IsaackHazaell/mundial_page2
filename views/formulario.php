@@ -1,3 +1,37 @@
+<?php
+
+	$msg = null;
+	if(isset($_POST["phpmailer"]))
+	{
+		$friend1 = htmlspecialchars($_POST["friend1"]);
+		$friend2 = htmlspecialchars($_POST["friend2"]);
+		$name = htmlspecialchars($_POST["name"]);
+		$email = htmlspecialchars($_POST["email"]);
+		$message = $_POST["message"];
+
+		require "../PHPMailer/class.phpmailer.php";
+
+		$mail = new PHPMailer;
+		$mail->Host = "localhost";
+		$mail->From = "isaachvc04@gmail.com";
+		$mail->FromName = "Rey supremo";
+		$mail->Subject = "Prueba de Mundial prro :v";
+		$mail->Body = "Hola $name This is the HTML message body <b>in bold!</b> ya funciona?";
+		$mail->isHTML(true);
+		// Se envia al correo del formulario y el nombre
+		$mail->addAddress($email, $name);
+
+		if(!$mail->send()) {
+		    echo 'OH OH Ocurrio un error el mensaje no se pudo enviar.';
+		    echo 'Mailer Error: ' . $mail->ErrorInfo;
+		} else {
+		    echo 'El mensaje se envio con éxito';
+		}
+
+	}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,9 +71,10 @@
 		<div class="wrap-contact100">
 			<div class="contact100-form-title" style="background-image: url(../images/bg-04.jpg);">
 				<span class="text-center">Llena el formulario</span>
+					<strong><?php echo $msg; ?></strong>
 			</div>
 
-			<form class="contact100-form validate-form">
+			<form class="contact100-form validate-form" method="post">
 				<!-- action= "../php/formulario.php" method="post" -->
 				<div class="wrap-input100 validate-input">
 					<input id="nameFriend1" class="input100" type="text" name="friend1" placeholder="Nombre completo del referido 1">
@@ -86,16 +121,19 @@
 				<!-- Validación de formulario incorrecta -->
 				<!-- a no valida pero si va a ruta -->
 				<!-- Button si valida pero no va a ruta -->
-				<div class="container-contact100-form-btn">
+				<!-- <div class="container-contact100-form-btn">
 						<a class="contact100-form-btn" href='quiniela.html'>
 							Enviar
 						</a>
-				</div>
+				</div> -->
 
 				<!-- Otra forma de enviar datos -->
-				<!-- <input type="submit" value="Enviar" onclick="enviar_dato" href="quiniela.html"> -->
+				<input type="hidden" name="phpmailer">
+				<div class="container-contact100-form-btn">
+					<input type="submit" value="Enviar" href="quiniela.html">
+				</div>
 
-				<div id="show-data"></div>
+				<!--<div id="show-data"></div>-->
 
 			</form>
 		</div>

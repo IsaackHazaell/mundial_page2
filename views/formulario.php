@@ -14,9 +14,11 @@
 		$mail = new PHPMailer;
 		$mail->Host = "localhost";
 		$mail->From = "isaachvc04@gmail.com";
-		$mail->FromName = "Rey supremo";
-		$mail->Subject = "Prueba de Mundial prro :v";
-		$mail->Body = "Hola $name This is the HTML message body <b>in bold!</b> ya funciona?";
+		$mail->FromName = "Frida & Ko";
+		$mail->Subject = "Quiniela mundial 2018";
+		$mail->Body = "Hola $name tus referidos invitados son $friend1 y $friend2,
+		Gracias por participar en este increible concurso, con gusto atenderemos tus mensaje: $message
+		en una llamada telefonica.";
 		$mail->isHTML(true);
 		// Se envia al correo del formulario y el nombre
 		$mail->addAddress($email, $name);
@@ -71,11 +73,9 @@
 		<div class="wrap-contact100">
 			<div class="contact100-form-title" style="background-image: url(../images/bg-04.jpg);">
 				<span class="text-center">Llena el formulario</span>
-					<strong><?php echo $msg; ?></strong>
 			</div>
 
-			<form class="contact100-form validate-form" method="post">
-				<!-- action= "../php/formulario.php" method="post" -->
+			<form class="contact100-form validate-form" method="POST" action="../bd/base.php">
 				<div class="wrap-input100 validate-input">
 					<input id="nameFriend1" class="input100" type="text" name="friend1" placeholder="Nombre completo del referido 1">
 					<span class="focus-input100"></span>
@@ -130,10 +130,8 @@
 				<!-- Otra forma de enviar datos -->
 				<input type="hidden" name="phpmailer">
 				<div class="container-contact100-form-btn">
-					<input type="submit" value="Enviar" href="quiniela.html">
+					<input class="contact100-form-btn" type="submit" value="Enviar" src="quiniela.html">
 				</div>
-
-				<!--<div id="show-data"></div>-->
 
 			</form>
 		</div>
@@ -159,7 +157,6 @@
 	<script src="../js/main.js"></script>
 	<!-- Libreria del nuevo formulario -->
 <!--===============================================================================================-->
-	<script src="../js/formulario.js"></script>
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
 	<script>

@@ -1,39 +1,3 @@
-<?php
-
-	$msg = null;
-	if(isset($_POST["phpmailer"]))
-	{
-		$friend1 = htmlspecialchars($_POST["friend1"]);
-		$friend2 = htmlspecialchars($_POST["friend2"]);
-		$name = htmlspecialchars($_POST["name"]);
-		$email = htmlspecialchars($_POST["email"]);
-		$message = $_POST["message"];
-
-		require "../PHPMailer/class.phpmailer.php";
-
-		$mail = new PHPMailer;
-		$mail->Host = "localhost";
-		$mail->From = "isaachvc04@gmail.com";
-		$mail->FromName = "Frida & Ko";
-		$mail->Subject = "Quiniela mundial 2018";
-		$mail->Body = "Hola $name tus referidos invitados son $friend1 y $friend2,
-		Gracias por participar en este increible concurso, con gusto atenderemos tus mensaje: $message
-		en una llamada telefonica.";
-		$mail->isHTML(true);
-		// Se envia al correo del formulario y el nombre
-		$mail->addAddress($email, $name);
-
-		if(!$mail->send()) {
-		    echo 'OH OH Ocurrio un error el mensaje no se pudo enviar.';
-		    echo 'Mailer Error: ' . $mail->ErrorInfo;
-		} else {
-		    echo 'El mensaje se envio con éxito';
-		}
-
-	}
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -75,7 +39,7 @@
 				<span class="text-center">Llena el formulario</span>
 			</div>
 
-			<form class="contact100-form validate-form" method="POST" action="../bd/base.php">
+			<form class="contact100-form validate-form" method="POST" action="../bd/save&email.php">
 				<div class="wrap-input100 validate-input">
 					<input id="nameFriend1" class="input100" type="text" name="friend1" placeholder="Nombre completo del referido 1">
 					<span class="focus-input100"></span>

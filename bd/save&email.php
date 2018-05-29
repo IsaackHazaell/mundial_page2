@@ -15,8 +15,8 @@
     $mail = new PHPMailer;
     $mail->Host = "localhost";
     $mail->From = "isaachvc04@gmail.com";
-    $mail->FromName = "Prueba de correo";
-    $mail->Subject = "Quiniela mundial 2018";
+    $mail->FromName = "Frida & Ko";
+    $mail->Subject = "Concurso mundial latin 2018";
     $mail->Body = $body;
     $mail->isHTML(true);
     // Se envia al correo del formulario y el nombre
@@ -56,7 +56,7 @@
   $email = $_POST['email'];
   $message = $_POST['message'];
 
-  $sql = "INSERT INTO informacion VALUES ('$friend1', '$friend2','$name','$email','$message')";
+  $sql = "INSERT INTO informacion VALUES ('$friend1', '$friend2','$name','$email','$message','','')";
 
   $ejecutar = mysqli_query($conection, $sql);
   if(!$ejecutar)

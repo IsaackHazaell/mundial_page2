@@ -81,20 +81,10 @@
 						<span class="lnr lnr-bubble"></span>
 					</label>
 				</div>
-
-				<!-- Validación de formulario incorrecta -->
-				<!-- a no valida pero si va a ruta -->
-				<!-- Button si valida pero no va a ruta -->
-				<!-- <div class="container-contact100-form-btn">
-						<a class="contact100-form-btn" href='quiniela.html'>
-							Enviar
-						</a>
-				</div> -->
-
-				<!-- Otra forma de enviar datos -->
+				
 				<input type="hidden" name="phpmailer">
 				<div class="container-contact100-form-btn">
-					<input class="contact100-form-btn" type="submit" value="Enviar" src="quiniela.html">
+					<input class="contact100-form-btn" type="submit" value="Enviar">
 				</div>
 
 			</form>

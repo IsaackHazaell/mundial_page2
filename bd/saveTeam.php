@@ -22,7 +22,7 @@
     echo $team1;
     echo $team2;
 
-    $sql = "INSERT INTO informacion VALUES ('','','','','','$team1', '$team2')";
+    $sql = "INSERT INTO informacion VALUES ('','','','','','','$team1', '$team2')";
 
     $ejecutar = mysqli_query($conection, $sql);
     if(!$ejecutar)

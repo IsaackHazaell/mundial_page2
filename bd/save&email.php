@@ -3,6 +3,7 @@
   $msg = null;
   if(isset($_POST["phpmailer"]))
   {
+    $city = htmlspecialchars($_POST["city"]);
     $friend1 = htmlspecialchars($_POST["friend1"]);
     $friend2 = htmlspecialchars($_POST["friend2"]);
     $name = htmlspecialchars($_POST["name"]);
@@ -50,13 +51,14 @@
     }
   }
 
+  $city = $_POST["city"];
   $friend1 = $_POST['friend1'];
   $friend2 = $_POST['friend2'];
   $name = $_POST['name'];
   $email = $_POST['email'];
   $message = $_POST['message'];
 
-  $sql = "INSERT INTO informacion VALUES ('$friend1', '$friend2','$name','$email','$message','','')";
+  $sql = "INSERT INTO informacion VALUES ('$city','$friend1', '$friend2','$name','$email','$message','','')";
 
   $ejecutar = mysqli_query($conection, $sql);
   if(!$ejecutar)
